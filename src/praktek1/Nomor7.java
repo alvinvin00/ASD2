@@ -2,7 +2,7 @@ package praktek1;
 
 public class Nomor7 {
     public static void main(String[] args) {
-        String string = "22abc22";
+        String string = "222";
         System.out.println(findString(string, "22"));
 
     }
@@ -10,14 +10,13 @@ public class Nomor7 {
 
     private static int findString(String string, String find) {
         int findLength = find.length();
-        if (string.length() == findLength) {
+        if (string.length() < findLength) {
             return 0;
         } else {
-            String newString = string.substring(findLength-1);
             if (string.substring(0, findLength).equalsIgnoreCase(find)) {
-                return 1 + findString(newString, find);
+                return 1 + findString(string.substring(findLength), find);
             } else {
-                return findString(newString, find);
+                return findString(string.substring(1), find);
             }
 
         }
