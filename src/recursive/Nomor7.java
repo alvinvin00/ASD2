@@ -1,4 +1,4 @@
-package praktek1;
+package recursive;
 
 public class Nomor7 {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package praktek2;
+package binary_tree;
 
 class Node<AnyType> {
 

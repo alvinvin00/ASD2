@@ -1,4 +1,4 @@
-package praktek1;
+package recursive;
 
 public class Nomor8 {
 
