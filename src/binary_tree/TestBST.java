@@ -18,7 +18,6 @@ public class TestBST {
         bst.insert(10);
         bst.insert(14);
         bst.insert(13);
-
         transverse(bst);
 
         System.out.print("Minimum : ");

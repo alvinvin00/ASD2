@@ -66,12 +66,12 @@ class BinarySearchTree<AnyType extends Comparable<? super AnyType>> {
         return t;
     }
 
-    void delete_min() throws Exception {
-        root = delete_min(root);
-    }
-
     void delete_max() throws Exception {
         root = delete_max(root);
+    }
+
+    void delete_min() throws Exception {
+        root = delete_min(root);
     }
 
     private Node<AnyType> delete_min(Node<AnyType> t) throws Exception {
