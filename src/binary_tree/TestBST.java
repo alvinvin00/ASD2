@@ -9,15 +9,15 @@ public class TestBST {
         BinarySearchTree<Integer> bst = new BinarySearchTree<>();
         Scanner s = new Scanner(System.in);
 
-        bst.insert(8);
-        bst.insert(3);
+        bst.insert(15);
         bst.insert(1);
+        bst.insert(8);
         bst.insert(6);
-        bst.insert(4);
         bst.insert(7);
-        bst.insert(10);
-        bst.insert(14);
-        bst.insert(13);
+        bst.insert(9);
+        bst.insert(11);
+        bst.insert(18);
+        bst.insert(19);
         transverse(bst);
 
         System.out.print("Minimum : ");
@@ -32,7 +32,7 @@ public class TestBST {
 //        System.out.print("Masukkan node yang ingin dihapus (Successor) : ");
 //        bst.delete_successor(s.nextInt());
 
-        bst.delete_min();
+        bst.delete_max();
 
         System.out.println("Transversal setelah node dihapus : ");
 

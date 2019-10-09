@@ -79,7 +79,9 @@ class BinarySearchTree<AnyType extends Comparable<? super AnyType>> {
         if (t == null) {
             throw new Exception();
         } else if (t.left.left == null) {
-            t.left = null;
+            if (t.left.right != null) {
+                t.left = t.left.right;
+            } else t.left = null;
         } else {
             delete_min(t.left);
         }
@@ -91,7 +93,9 @@ class BinarySearchTree<AnyType extends Comparable<? super AnyType>> {
         if (t == null) {
             throw new Exception();
         } else if (t.right.right == null) {
-            t.right = null;
+            if (t.right.left != null) {
+                t.right = t.right.left;
+            } else t.right = null;
         } else {
             delete_max(t.right);
         }
