@@ -8,16 +8,20 @@ class BinarySearchTree<AnyType extends Comparable<? super AnyType>> {
 
     }
 
-    private Node<AnyType> insertNode(AnyType x, Node<AnyType> t) throws Exception {
+    void insert(AnyType x) throws Exception {
+        root = insert(x, root);
+    }
+
+    private Node<AnyType> insert(AnyType x, Node<AnyType> t) throws Exception {
         if (t == null) {
             t = new Node<>(x);
 
         } else if (x.compareTo(t.data) < 0) {
-            t.left = insertNode(x, t.left);
+            t.left = insert(x, t.left);
 
         } else if (x.compareTo(t.data) > 0) {
 
-            t.right = insertNode(x, t.right);
+            t.right = insert(x, t.right);
         } else {
             throw new Exception(x.toString());
         }
@@ -66,10 +70,6 @@ class BinarySearchTree<AnyType extends Comparable<? super AnyType>> {
         return t;
     }
 
-    void delete_max() throws Exception {
-        root = delete_max(root);
-    }
-
     void delete_min() throws Exception {
         root = delete_min(root);
     }
@@ -88,6 +88,10 @@ class BinarySearchTree<AnyType extends Comparable<? super AnyType>> {
         return t;
     }
 
+    void delete_max() throws Exception {
+        root = delete_max(root);
+    }
+
     private Node<AnyType> delete_max(Node<AnyType> t) throws Exception {
 
         if (t == null) {
@@ -100,10 +104,6 @@ class BinarySearchTree<AnyType extends Comparable<? super AnyType>> {
             delete_max(t.right);
         }
         return t;
-    }
-
-    void insert(AnyType x) throws Exception {
-        root = insertNode(x, root);
     }
 
     void inOrder() {
@@ -168,10 +168,6 @@ class BinarySearchTree<AnyType extends Comparable<? super AnyType>> {
         return t;
     }
 
-    private AnyType elementAt(Node<AnyType> t) {
-        return (t == null) ? null : t.data;
-    }
-
     AnyType maxValue() {
         return elementAt(maxValue(root));
     }
@@ -183,6 +179,10 @@ class BinarySearchTree<AnyType extends Comparable<? super AnyType>> {
             }
         }
         return t;
+    }
+
+    private AnyType elementAt(Node<AnyType> t) {
+        return (t == null) ? null : t.data;
     }
 
 }
