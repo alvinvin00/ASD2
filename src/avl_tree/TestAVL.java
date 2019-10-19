@@ -12,13 +12,16 @@ public class TestAVL {
         avl.insert(8);
         avl.insert(32);
         avl.insert(40);
+        avl.insert(14);
         avl.insert(45);
         avl.insert(60);
         avl.insert(42);
         avl.printPreOrder();
         System.out.println();
-        avl.delete_successor(32);
-        avl.delete_successor(15);
+        avl.delete_predecessor(15);
+        avl.printPreOrder();
+        System.out.println();
+        avl.delete_predecessor(32);
         avl.printPreOrder();
     }
 }

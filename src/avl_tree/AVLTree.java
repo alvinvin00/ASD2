@@ -157,8 +157,38 @@ class AVLTree<AnyType extends Comparable<? super AnyType>> {
             t = t.left;
         }
         return t;
-
     }
+
+    private Node<AnyType> findMax(Node<AnyType> t) {
+        if (t == null) {
+            return null;
+        }
+        while (t.right != null) {
+            t = t.right;
+        }
+        return t;
+    }
+
+    void delete_predecessor(AnyType x) {
+        delete_predecessor(x, root);
+    }
+
+    private Node<AnyType> delete_predecessor(AnyType x, Node<AnyType> t) {
+        if (t == null) {
+            return null;
+        } else if (x.compareTo(t.element) < 0) {
+            t.left = delete_predecessor(x, t.left);
+        } else if (x.compareTo(t.element) > 0) {
+            t.right = delete_predecessor(x, t.right);
+        } else if (t.left != null && t.right != null) {
+            t.element = findMax(t.left).element;
+            t.left = delete_predecessor(t.element, t.left);
+        } else {
+            t = t.left != null ? t.left : t.right;
+        }
+        return balance(t);
+    }
+
 
     void delete_successor(AnyType x) {
         delete_successor(x, root);
@@ -179,6 +209,17 @@ class AVLTree<AnyType extends Comparable<? super AnyType>> {
         }
         return balance(t);
     }
+
+//    private Node<AnyType> deleteMin(Node<AnyType> t) {
+//        if (t == null) {
+//            return null;
+//        } else if (t.left != null) {
+//            deleteMin(t.left);
+//
+//
+//        }
+//        return t;
+//    }
 
     private Node<AnyType> balance(Node<AnyType> t) {
         if (t == null) {
