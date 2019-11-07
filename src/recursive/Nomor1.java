@@ -4,18 +4,18 @@ public class Nomor1 {
 
 
     public static void main(String[] args) {
-        int n = 218189;
+        int n = 91791289;
         System.out.println(
-                "Jumlah Bilangan 9 di bilangan " + n + " = " + hitungSembilan(n, 0));
+                "Jumlah Bilangan 9 di bilangan " + n + " = " + hitungSembilan(n));
     }
 
-    private static int hitungSembilan(int n, int j) {
+    private static int hitungSembilan(int n) {
         if (n <= 0) {
-            return j;
+            return 0;
+        } else if (n % 10 == 9) {
+            return 1 + hitungSembilan(n / 10);
         } else {
-            System.out.println(n);
-            if (n % 10 == 9) j++;
-            return hitungSembilan(n / 10, j);
+            return hitungSembilan(n / 10);
         }
     }
 }

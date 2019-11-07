@@ -8,7 +8,7 @@ public class Nomor8 {
     }
 
     private static String removeChar(String str, char ch) {
-        if (str.length()==0) {
+        if (str.length() == 0) {
             return "";
         } else {
             char checkedChar = str.charAt(0);

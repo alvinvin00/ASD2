@@ -12,13 +12,12 @@ public class Nomor7 {
         int findLength = find.length();
         if (string.length() < findLength) {
             return 0;
-        } else {
-            if (string.substring(0, findLength).equalsIgnoreCase(find)) {
-                return 1 + findString(string.substring(findLength), find);
-            } else {
-                return findString(string.substring(1), find);
-            }
+        }
 
+        if (string.substring(0, findLength).equalsIgnoreCase(find)) {
+            return 1 + findString(string.substring(findLength), find);
+        } else {
+            return findString(string.substring(1), find);
         }
 
 

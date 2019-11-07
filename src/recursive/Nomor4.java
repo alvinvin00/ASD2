@@ -3,16 +3,16 @@ package recursive;
 public class Nomor4 {
 
     public static void main(String[] args) {
-        System.out.println(jumlahBilangan(69, 0));
+        System.out.println(jumlahBilangan(69));
 
 
     }
 
-    private static int jumlahBilangan(int n, int j) {
+    private static int jumlahBilangan(int n) {
         if (n == 0) {
-            return j;
+            return 0;
         } else {
-            return jumlahBilangan(n / 10, j + n % 10);
+            return n % 10 + jumlahBilangan(n / 10);
         }
     }
 }

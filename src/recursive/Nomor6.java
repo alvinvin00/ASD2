@@ -2,20 +2,20 @@ package recursive;
 
 public class Nomor6 {
     public static void main(String[] args) {
-        System.out.println(pindahA("aare", 0, 0));
+        System.out.println(charToLast("aahiaa", 'a'));
     }
 
-    private static String pindahA(String string, int i, int j) {
-        if (i == string.length()) {
-            return string.concat("a".repeat(j));
+    private static String charToLast(String string, char ch) {
+        if (string.length() <= 0) {
+            return "";
+        }
+
+        String newString = string.substring(1);
+
+        if (string.indexOf(ch) == 0) {
+            return charToLast(newString, ch) + ch;
         } else {
-            if (string.charAt(i) == 'a') {
-
-                j++;
-            }
-
-            System.out.println(string);
-            return pindahA(string, ++i, j);
+            return string.charAt(0) + charToLast(newString, ch);
         }
     }
 

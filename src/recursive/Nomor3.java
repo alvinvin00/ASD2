@@ -4,18 +4,17 @@ public class Nomor3 {
     public static void main(String[] args) {
 
         int[] array = {1, 2, 11, 11};
-        System.out.println(cari11(array, 0, 0));
+        System.out.println(cari11(array, 0));
 
     }
 
-    private static int cari11(int[] array, int i, int j) {
+    private static int cari11(int[] array, int i) {
         if (i == array.length) {
-            return j;
+            return 0;
+        } else if (array[i] == 11) {
+            return 1 + cari11(array, ++i);
         } else {
-            System.out.println(array[i]);
-            if (array[i] == 11) j++;
-            return cari11(array, ++i, j);
-
+            return cari11(array, ++i);
         }
 
 
