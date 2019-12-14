@@ -48,8 +48,6 @@ public class TransversalGraf {
             int tujuan = Integer.parseInt(split[1]);
 
             matrix[asal - 1][tujuan - 1] = 1;
-            matrix[tujuan - 1][asal - 1] = 1;
-
         }
         System.out.print("Masukkan simpul awal : ");
         simpul = Integer.parseInt(br.readLine());
