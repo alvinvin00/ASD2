@@ -210,17 +210,6 @@ class AVLTree<AnyType extends Comparable<? super AnyType>> {
         return balance(t);
     }
 
-//    private Node<AnyType> deleteMin(Node<AnyType> t) {
-//        if (t == null) {
-//            return null;
-//        } else if (t.left != null) {
-//            deleteMin(t.left);
-//
-//
-//        }
-//        return t;
-//    }
-
     private Node<AnyType> balance(Node<AnyType> t) {
         if (t == null) {
             return null;
@@ -243,6 +232,5 @@ class AVLTree<AnyType extends Comparable<? super AnyType>> {
         t.height = max(height(t.left), height(t.right)) + 1; //Update tree height
         return t;
     }
-
 
 }

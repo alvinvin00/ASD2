@@ -11,9 +11,4 @@ class Node<AnyType> {
         left = lt;
         right = rt;
     }
-
-
-
-
-
 }

@@ -6,9 +6,11 @@ public class InfixPostfix {
 
     public static void main(String[] args) {
         InfixPostfix ip = new InfixPostfix();
-        String exp = "(((1/3)*(x^2))+(4*(y^3))-z)/((x*y)^(1/2))";
-        System.out.println(ip.infixToPostfix(exp));
+//        String exp = "(((1/3)*(x^2))+(4*(y^3))-z)/((x*y)^(1/2))";
+        String exp = "((3*(x^2)*y))+(4*x*(y^2))/(((2*x)+(3*y))^(1/2))";
 
+
+        System.out.println(ip.infixToPostfix(exp));
     }
 
     public String infixToPostfix(String exp) {
